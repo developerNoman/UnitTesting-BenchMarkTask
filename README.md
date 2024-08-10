@@ -15,13 +15,32 @@ This repository is about the Unit testing and Benchmarking along with the CMake 
 <li>Include a top-level CMakeLists.txt file that will configure the entire project and its dependencies, including Google Unittest as a submodule.</li>
 <li>Create a README.md file at the top level to provide instructions and explanations for the project.</li>
 </p>
-<h2>Basic Usage</h2>
-<p>The project include the unit testing and benchmarking of the binary gap and the vector rotation c++ tasks. Its the basic project which demonstrate that how to write unittests, benchmarks inside the cmake coding structure</p>
-<h2>How to build and run the executables</h2>
-<p><ul>
-  <li>Create the build folder at top level ('mkdir build')</li>
-  <li>Move inside build ('cd build')</li>
-  <li>Use ('cmake ..')</li>
-  <li>Use ('make')</li>
-  <li>Run the executables</li>
-</ul></p>
+  
+# Foobar
+
+The project include the unit testing and benchmarking of the binary gap and the vector rotation c++ tasks. Its the basic project which demonstrate that how to write unittests, benchmarks inside the cmake coding structure
+ 
+##  How to build and run the executables
+
+
+```bash
+mkdir build
+cd build
+cmake ..
+make
+./MyProject or ./runTests or ./my_benchmark
+```
+
+## How to build and run the executables with the option of unittests and benchmark by user decision:
+
+```bash
+mkdir build
+cd build
+
+cmake -DBUILD_BENCHMARK=OFF ..     //if You don't want benchmarks then run only this
+cmake -DBUILD_BENCHMARK=OFF ..     //if you don't want unittests, then run only this
+cmake -DENABLE_TESTING=OFF ..      //if you don't want both, then run this only
+
+make
+./MyProject or ./runTests or ./my_benchmark
+```
